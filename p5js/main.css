@@ -1,0 +1,166 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: "space-mono", mono;
+    font-weight: 400;
+    font-style: normal;
+    /* Space Mono Regular
+font-family: "space-mono", mono;
+font-weight: 400;
+font-style: normal;
+Space Mono Italic
+font-family: "space-mono", mono;
+font-weight: 400;
+font-style: italic;
+Space Mono Bold
+font-family: "space-mono", mono;
+font-weight: 700;
+font-style: normal;
+Space Mono Bold Italic
+font-family: "space-mono", mono;
+font-weight: 700;
+font-style: italic; */
+}
+
+button{
+    display: inline-flex;
+    flex-wrap: wrap;
+    justify-content: left;
+    background-color: rgb(255, 0, 128);
+    border: none;
+    padding: 0.5%;
+    position: sticky;
+}
+
+svg{
+    display: inline-flex;
+    padding-top: 30px;
+    padding-left: 15px;
+    
+}
+
+#header{
+    display: inline-flex;
+    justify-content: center;
+    background-color: rgb(255, 0,128);
+    width: 100%;
+    flex-wrap: wrap;
+
+}
+.indexTitle{
+    display: inline-flex;
+    font-size: 5em;
+    justify-content: center;
+    text-align: center;
+}
+
+
+.content{
+    display: flex;
+    padding: 4%;
+    font-size: 3em;
+}
+
+
+
+.collapsible {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+
+  }
+
+  a{
+    display: flex;
+    text-decoration: none;
+  }
+
+  a:active {
+    color: rgb(0, 0, 0);
+  }
+
+  a:hover {
+    color: black;
+  }
+
+  a:visited {
+    color: black;
+  } 
+
+/* 
+  canvas {
+    border-radius: 10px;
+    background-color: #2A00FF;
+}
+
+
+body.canvas1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+body.canvas2 {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+} */
+
+/* .container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 500px;
+} */
+
+/* #c1{
+    width: 1000px;
+    height: auto;
+    background-color: blue;
+}
+
+#c2{
+
+} */
+
+/* canvas{
+padding-left: 500px;
+background-color: rgb(208, 255, 0) ;
+} */
+
+/* #defaultCanvas0{
+    padding-top: 15;
+    padding-left: 50px; */
+    /* background-color: red ; */
+    /* width: 1000px;
+    height: auto;
+ 
+}
+
+
+} */
+
+.canvas-container {
+  display: inline-flex;
+  margin: 10px;
+  position: relative;
+}
+
+canvas{
+  border: 5px solid black;
+}
+
+.text1{
+  display: inline-flex;
+  flex-direction: row;
+  padding: 50px;
+  font-family: monospace;
+}
+
+
+canvas#defaultCanavas0.p5canvas{
+  border: blue solid 10px;
+  display: inline-flex;
+}
+
+
