@@ -1,4 +1,4 @@
-var coll = document.getElementsByClassName("collapsible");
+var coll = document.getElementsByClassName("homeHeader");
 var i;
 
 // script for collapsible menu
