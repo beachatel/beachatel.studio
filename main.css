@@ -101,7 +101,9 @@ figcaption {
   position: sticky;
 }
 
-
+.Projects{
+  border: black 1px solid;
+}
 
 
 figcaption.projectName {
@@ -127,6 +129,7 @@ img {
 
 img.projectImg {
   border-radius: 0.25em;
+ 
 }
 
 .about{
