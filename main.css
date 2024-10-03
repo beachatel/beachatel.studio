@@ -120,10 +120,25 @@ figcaption.tag {
 }
 
 
-
 img {
-  border-radius: 0.25em;
+ 
   object-fit: cover;
+}
+
+img.projectImg {
+  border-radius: 0.25em;
+}
+
+.about{
+float: right;
+padding-right: 2em;
+padding-top: 5em;
+font-size: 1.2em;
+}
+
+.aboutImg1 {
+display: inline;
+margin-top: 100px;
 }
 
 
