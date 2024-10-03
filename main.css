@@ -12,9 +12,11 @@
     padding-left: 1em;
     padding-right: 1em;
     font-family: "Karrik", mono;
-      color: rgb(106, 103, 103);
+      color: rgb(39, 36, 36);
    
 } 
+
+
 
  #header{ /* parent */
   height: fit-content;
@@ -23,23 +25,18 @@
 .indexTitle{
     display: inline-flex;
     font-size: 3em;
-    border: 1px solid;
-    
 }
 
 
 .links{
     display: inline-flex;
     font-size: 2em;
-    border: 1px solid;
     float: right;
     padding: 0;
 }
 
 .socials{
-    display:flexbox;
-    justify-content: center;
-    border: 1px solid;
+    padding-left: 2em;
     width: fit-content;
 }
 
