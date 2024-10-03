@@ -1,20 +1,24 @@
-@font-face {
+/* @font-face {
   font-family: "Karrik";
   src: url(Fonts/Karrik-Regular.ttf);
 
-}
+} */
 
 
 
 
 *{
-    margin: 0.5em;
-    padding-left: 1em;
-    padding-right: 1em;
-    font-family: "Karrik", mono;
+ 
+    /* font-family: "Karrik", mono; */
+    font-family: "wanpaku-rera", sans-serif;
       color: rgb(39, 36, 36);
+      box-sizing: border-box;
+        overflow-x: hidden;
    
 } 
+
+
+
 
 
 
@@ -25,6 +29,7 @@
 .indexTitle{
     display: inline-flex;
     font-size: 3em;
+    
 }
 
 
@@ -36,7 +41,7 @@
 }
 
 .socials{
-    padding-left: 2em;
+
     width: fit-content;
 }
 
@@ -63,4 +68,130 @@
 footer{
   position: fixed;
   bottom: 0;
+}
+
+
+.img-grid-archive {
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 50px;
+  column-gap: 10px;
+  justify-content: center;
+  padding-top: 50px;
+  padding-left: 52px;
+  padding-right: 50px;
+  padding-bottom: 5px;
+
+}
+
+figcaption {
+  position: sticky;
+  padding-left: 5px;
+}
+
+
+figcaption.artistname {
+  font-size: 20px;
+  opacity: 60%;
+}
+
+figcaption.projectName {
+  font-size: 30px;
+}
+
+figcaption.dateposted {
+  font-size: 20px;
+  opacity: 60%;
+}
+
+figcaption.tag {
+  font-size: 20px;
+  opacity: 60%;
+}
+
+.item {
+  color: black;
+  padding-left: 0px;
+}
+
+
+
+img {
+  border-radius: 9px;
+  object-fit: cover;
+}
+
+
+
+
+
+a {
+  text-decoration: none;
+  padding-left: 3.7px;
+  background-color: rgb(255, 255, 255);
+
+
+}
+
+a.item:hover {
+  color: #000;
+
+}
+
+a.tag {
+  padding-top: -5px;
+}
+
+
+a.topelements {
+  display: inline-block;
+  padding-right: 25px;
+}
+
+a.artistshow {
+  padding-left: 200px;
+
+}
+
+a:visited {
+  color: black;
+  background-color: white;
+}
+
+a:hover {
+  color: #3b85f6;
+  background-color: white;
+}
+
+a:active {
+  color: #3b85f6;
+  background-color: white;
+}
+
+a.artistshow:hover {
+  color: #000;
+}
+
+
+.no-scrollbar {
+  scrollbar-width: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+
+
+
+
+
+/* make footer relative to each page, e.g not on home page as scroll is not enough on y axis */
+footer {
+  display: flex;
+  position: sticky bottom;
+  margin-top: 50px;
+
 }
