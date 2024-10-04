@@ -14,22 +14,22 @@ let colorPick1,colorPick2,colorPick3;
 let slider;
 
 function setup() {
-  createCanvas(1600, 1090, P2D);
+  createCanvas(windowWidth - windowWidth/5, windowHeight - windowHeight/9, P2D);
   smooth(2);  // Enable anti-aliasing for smoother images
   frameRate(60);
 
    colorPick1= createColorPicker('deeppink');
-  colorPick1.position(1700, 100);
+  colorPick1.position(windowWidth - windowWidth/6, windowHeight/6);
 
   colorPick2 = createColorPicker('rgb(110, 231, 144)');
-  colorPick2.position(1700, 200);
+  colorPick2.position(windowWidth - windowWidth/6, windowHeight/4);
 
    colorPick3 = createColorPicker('rgb(82, 26, 225)');
-  colorPick3.position(1700, 300);
+  colorPick3.position(windowWidth - windowWidth/6, windowHeight/3);
 
-  slider = createSlider(0, 255);
-  slider.position(1900, 100);
-  slider.size(200);
+  // slider = createSlider(0, 255);
+  // slider.position(1900, 100);
+  // slider.size(200);
 
   // Initialize DisplayGrid
   display = new DisplayGrid();
@@ -104,8 +104,8 @@ class GridSquare {
  
 
     // Uncomment the following lines if you want to display the grid square outline
-    // noFill();   // No fill for the rectangle
-    // rect(this.x, this.y, this.w, this.h);  // Draw the rectangle outline
+    noFill();   // No fill for the rectangle
+    rect(this.x, this.y, this.w, this.h);  // Draw the rectangle outline
   
     // Display the Superformula within this grid square
     this.superForm.display();
