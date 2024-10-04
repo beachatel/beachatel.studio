@@ -11,7 +11,7 @@ let updateInterval = 10000;
 
 let display;
 let colorPick1,colorPick2,colorPick3;
-let slider;
+let slider1,slider2,slider3;
 
 function setup() {
   createCanvas(windowWidth - windowWidth/5, windowHeight - windowHeight/9, P2D);
@@ -27,9 +27,17 @@ function setup() {
    colorPick3 = createColorPicker('rgb(82, 26, 225)');
   colorPick3.position(windowWidth - windowWidth/6, windowHeight/3);
 
-  // slider = createSlider(0, 255);
-  // slider.position(1900, 100);
-  // slider.size(200);
+  slider1 = createSlider(0, 255);
+  slider1.position(windowWidth - windowWidth/6, windowHeight/9);
+  slider1.size(200);
+
+  slider2 = createSlider(0, 255);
+  slider2.position(windowWidth - windowWidth/6, windowHeight/9);
+  slider2.size(200);
+
+  slider3 = createSlider(0, 255);
+  slider3.position(windowWidth - windowWidth/6, windowHeight/15);
+  slider3.size(200);
 
   // Initialize DisplayGrid
   display = new DisplayGrid();
