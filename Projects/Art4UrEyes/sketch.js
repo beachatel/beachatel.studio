@@ -10,9 +10,16 @@ let lastUpdateTime;
 let updateInterval;
 let fr;
 let display;
-let colorPick1,colorPick2,colorPick3;
-let slider1,slider2,slider3,sliderai,sliderbi,slidermi,slidern1i,slidern2i,slidern3i,slidervi,sliderti;
 
+let colorPick1,colorPick2,colorPick3;
+let sliderai,sliderbi,slidermi,slidern1i,slidern2i,slidern3i,slidervi,sliderti;
+// let slideraiLabel
+let img;
+let button;
+
+
+
+ 
 // 
 
 function setup() {
@@ -32,15 +39,19 @@ function setup() {
    colorPick3 = createColorPicker('rgb(82, 26, 225)');
   colorPick3.position(windowWidth - windowWidth/6, windowHeight/3);
 
-  sliderai = createSlider(0,10);
+  //intenisty
+  sliderai = createSlider(0,5,0.1,0.1);
   sliderai.position(windowWidth - windowWidth/6, 300);
   sliderai.size(200);
 
-  sliderbi = createSlider(0, 10);
+  // slideraiLabel = createP('Slider Value: ' + slider.value());
+  // slideraiLabel.position(10, 40); // Position the label below the slider
+
+  sliderbi = createSlider(0.1, 1,0.1,0.1);
   sliderbi.position(windowWidth - windowWidth/6,350);
   sliderbi.size(200);
 
-  slidermi = createSlider(0, 10);
+  slidermi = createSlider(0, 2,0.1,0.1);
   slidermi.position(windowWidth - windowWidth/6, 400);
   slidermi.size(200);
 
@@ -52,19 +63,25 @@ function setup() {
   slidern2i.position(windowWidth - windowWidth/6, 500);
   slidern2i.size(200);
 
+  //scale 
   slidern3i = createSlider(0, 10);
   slidern3i.position(windowWidth - windowWidth/6, 550);
   slidern3i.size(200);
 
-
-  slidernvi = createSlider(0, 1);
-  slidernvi.position(windowWidth - windowWidth/6, 600);
-  slidernvi.size(200);
+  //theta times by variable
+  slidervi = createSlider(0.1, 1,0.1,0.1);
+  slidervi.position(windowWidth - windowWidth/6, 600);
+  slidervi.size(200);
 
   //theta interaction
-   sliderti = createSlider(0, 1,0.1,0.1);
+   sliderti = createSlider(0, 5,0.1,0.1);
   sliderti.position(windowWidth - windowWidth/6, 650);
   sliderti.size(200);
+
+  button = createButton('Save');
+  
+  button.mousePressed(saveImage);
+
 
 
   // Initialize DisplayGrid
@@ -87,7 +104,8 @@ function draw() {
   // let fr = slider2.value();
   // let x = slider3.value();
 
-  
+    // slideraiLabel.html('Slider Value: ' + slider.value());
+
 
   stroke(str);
 
@@ -244,12 +262,12 @@ class SuperForm {
     let n1i = slidern1i.value();
     let n2i = slidern2i.value();
     let n3i = slidern3i.value();
-    // let vi = slidervi.value();
+    let vi = slidervi.value();
     let ti = sliderti.value();
 
     beginShape();
     // Add interactive variables a, b, m, n1, n2, n3 to the shape
-    for (let theta = ti; theta <= TWO_PI; theta += 0.5) {
+    for (let theta = ti; theta <= TWO_PI; theta += vi) {
       let radius = this.r(theta, sin(this.t) + ai, bi, mi, n1i, n2i, n3i);
 
       // Map radius to fit within the grid square
@@ -274,5 +292,9 @@ class SuperForm {
 
     return pow(cosPart + sinPart, -1.0 / n1);
   }
+}
+
+function saveImage(){
+  save("custom.png");
 }
 
