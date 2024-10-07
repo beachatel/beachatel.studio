@@ -11,9 +11,9 @@ let updateInterval;
 let fr;
 let display;
 let colorPick1,colorPick2,colorPick3;
-let slider1,slider2,slider3,sliderai,sliderbi,slidermi,slidern1i,slidern2i,slidern3i,slidervi;
+let slider1,slider2,slider3,sliderai,sliderbi,slidermi,slidern1i,slidern2i,slidern3i,slidervi,sliderti;
 
- 
+// 
 
 function setup() {
   createCanvas(windowWidth - windowWidth/5, windowHeight - windowHeight/9, P2D);
@@ -56,9 +56,15 @@ function setup() {
   slidern3i.position(windowWidth - windowWidth/6, 550);
   slidern3i.size(200);
 
+
   slidernvi = createSlider(0, 1);
   slidernvi.position(windowWidth - windowWidth/6, 600);
   slidernvi.size(200);
+
+  //theta interaction
+   sliderti = createSlider(0, 1,0.1,0.1);
+  sliderti.position(windowWidth - windowWidth/6, 650);
+  sliderti.size(200);
 
 
   // Initialize DisplayGrid
@@ -239,10 +245,11 @@ class SuperForm {
     let n2i = slidern2i.value();
     let n3i = slidern3i.value();
     // let vi = slidervi.value();
+    let ti = sliderti.value();
 
     beginShape();
     // Add interactive variables a, b, m, n1, n2, n3 to the shape
-    for (let theta = 0; theta <= TWO_PI; theta += 0.5) {
+    for (let theta = ti; theta <= TWO_PI; theta += 0.5) {
       let radius = this.r(theta, sin(this.t) + ai, bi, mi, n1i, n2i, n3i);
 
       // Map radius to fit within the grid square
