@@ -87,13 +87,11 @@ footer{
 .img-grid-archive {
   display: flex;
   flex-wrap: wrap;
-  row-gap: 50px;
-  column-gap: 10px;
+  row-gap: 3em;
+  column-gap: 1em;
   justify-content: center;
-  padding-top: 3rem;
-  padding-left: 52px;
-  padding-right: 50px;
-  padding-bottom: 5px;
+  padding-top: 3em;
+
 
 }
 

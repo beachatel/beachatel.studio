@@ -1,3 +1,7 @@
-*.Studio/img/
+*./img/
 
-.img*
+*.png
+
+*.jpg
+
+*.JPG
