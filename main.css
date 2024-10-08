@@ -107,11 +107,11 @@ figcaption {
 
 
 figcaption.projectName {
-  font-size: 30px;
+  font-size: 1.2em;
 }
 
 figcaption.tag {
-  font-size: 20px;
+  font-size: 0.9em;
   opacity: 60%;
   padding-left: 0.2em;
 }
