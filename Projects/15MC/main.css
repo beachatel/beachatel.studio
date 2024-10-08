@@ -1,7 +1,12 @@
+*{
+    background-color: white;
+}
+
+
 #container {
     display: flex;
     align-items: flex-start;
-   
+    background-color: white;
    
 }
 
@@ -9,12 +14,12 @@
     font-size: 4vw;
     text-align: center;
     border: solid;
-
+    
 }
 
 #about{
     margin-top: 10vh;
-    background-color: #e06f8e;
+    /* background-color: #e06f8e; */
     color: #000000;
     font-size: 2vw;
     border-radius: 10px;
@@ -26,7 +31,7 @@
 
 #data {
     margin-top: 2vh;
-        background-color: #e06f8e;
+        /* background-color: #e06f8e; */
             color: #000000;
             font-size: 2vw;
             border-radius: 10px;
@@ -38,7 +43,7 @@
     margin-top: 2vh;
     padding-top: 1vh;
     padding-bottom: 1vh;
-    background-color: #e06f8e;
+    /* background-color: #e06f8e; */
     color: #000000;
     font-size: 2vw;
     border-radius: 10px;
@@ -73,7 +78,7 @@ a:link{
     font-size: 2vw;
     text-align: center;
     width: 35vh;
-    background-color: #000000;
+    /* background-color: #000000; */
     font-family: "menco", sans-serif;
         font-weight: 500;
         font-style: normal;

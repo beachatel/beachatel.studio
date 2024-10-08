@@ -78,7 +78,15 @@ function setup() {
   sliderti.position(windowWidth - windowWidth/6, 650);
   sliderti.size(200);
 
-  button = createButton('Save');
+   sliderposXi = createSlider(0, 100,1,0.1);
+  sliderposXi.position(windowWidth - windowWidth/6, 700);
+  sliderposXi.size(200);
+
+   sliderposYi = createSlider(0, 100,1,0.1);
+  sliderposYi.position(windowWidth - windowWidth/6, 750);
+  sliderposYi.size(200);
+
+  button = createButton('Save Image');
   
   button.mousePressed(saveImage);
 
@@ -264,6 +272,8 @@ class SuperForm {
     let n3i = slidern3i.value();
     let vi = slidervi.value();
     let ti = sliderti.value();
+    let posXi = sliderposXi.value();
+    let posYi = sliderposYi.value();
 
     beginShape();
     // Add interactive variables a, b, m, n1, n2, n3 to the shape
@@ -275,8 +285,8 @@ class SuperForm {
       let adjustedRadius = radius * maxRadius;
 
       // Calculate the x and y positions relative to the center of the grid square
-      let posX = this.x + this.w / 2 + adjustedRadius * cos(theta * 100);
-      let posY = this.y + this.h / 2 + adjustedRadius * sin(theta * 10);
+      let posX = this.x + this.w / 2 + adjustedRadius * cos(theta * posXi);
+      let posY = this.y + this.h / 2 + adjustedRadius * sin(theta * posYi);
 
       // Draw the vertex for the shape
       vertex(posX, posY);
