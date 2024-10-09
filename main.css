@@ -78,10 +78,10 @@
   } 
 
 
-footer{
+/* footer{
   position: fixed;
   bottom: 0;
-}
+} */
 
 
 .img-grid-archive {
@@ -202,10 +202,7 @@ a:active {
 
 
 
-/* make footer relative to each page, e.g not on home page as scroll is not enough on y axis */
+/* make footer relative to each page, e.g not on home page as scroll is not enough on y axis
 footer {
-  display: flex;
-  position: sticky bottom;
-  margin-top: 50px;
-
-}
+  position:bottom;
+} */
