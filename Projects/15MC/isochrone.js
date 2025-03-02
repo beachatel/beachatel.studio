@@ -51,4 +51,3 @@ fetch("https://api.traveltimeapp.com/v4/time-map", requestOptions)
   .then((result) => console.log(result))
   .catch((error) => console.error(error));
 
-//   push to git 

@@ -305,6 +305,6 @@ class SuperForm {
 }
 
 function saveImage(){
-  save("custom.png");
+  save("custom.jpg");
 }
 
