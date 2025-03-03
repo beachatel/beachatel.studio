@@ -1,214 +1,286 @@
-/* @font-face {
-  font-family: "Karrik";
-  src: url(Fonts/Karrik-Regular.ttf);
-
-} */
-
-
-
-
-*{
- 
-    /* font-family: "Karrik", mono; */
+/* General Styles */
+* {
     font-family: "wanpaku-rera", sans-serif;
-      color: rgb(39, 36, 36);
-      /* box-sizing: border-box; */
-        overflow-x: hidden;
-   
-} 
 
-
-
-
-
-
- #header{ /* parent */
-  /* height: fit-content; */
-  border: solid 0.1em rgb(39, 36, 36);;
+    box-sizing: border-box;
+    overflow-x: hidden;
 }
 
-.indexTitle{
+#header {
+    border: solid 0.1em rgb(39, 36, 36); /* Default border color */
+}
+
+.indexTitle {
     display: inline-flex;
     font-size: 3em;
-     height: 1.5em;
-
+    height: 1.5em;
+        color: rgb(39, 36, 36); /* Default text color */
 }
 
-
-.links{
+.links {
     display: inline-flex;
     font-size: 2em;
     float: right;
     padding: 0;
     padding-top: 0.2em;
-    color: rgb(39, 36, 36);
-
+    color: rgb(39, 36, 36); /* Default text color */
 }
 
-.socials{
-
- width: 100%;
- padding: 0.5em;
- border-top: 0.1em solid rgb(39, 36, 36);;
+.socials {
+    width: 100%;
+    padding: 0.5em;
+    border-top: 0.1em solid rgb(39, 36, 36);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
 }
 
-
-  a{
-    padding: 0;
-    text-decoration: none;
-  }
-
-  a.nav{
-    padding-left: 0.5em;
-    padding-right: 0.5em;
-  }
-
-/* if screen < x change padding to bigger number to make it easier for touchscreen */
-
-  a.handles{
-    padding-left: 0.2em;
-    padding-right: 0.2em;
-  
-  }
-
-  a:active {
-    color: inherit;
-  }
-
-  a:hover {
-   color: inherit;
-  }
-
-  a:visited {
-    color: inherit;
-  } 
-
-
-/* footer{
-  position: fixed;
-  bottom: 0;
-} */
-
-
-.img-grid-archive {
-  display: flex;
-  flex-wrap: wrap;
-  row-gap: 3em;
-  column-gap: 1em;
-  justify-content: center;
-  padding-top: 3em;
-
-
-}
-
-figcaption {
-  position: sticky;
-}
-
-/* .Projects{
-
-} */
-
-
-figcaption.projectName {
-  font-size: 1.2em;
-}
-
-figcaption.tag {
-  font-size: 0.9em;
-  opacity: 60%;
-  padding-left: 0.2em;
-}
-
-.item {
-  color: black;
-
+.socials svg {
+    margin-right: 1em; /* Space out the social icons */
 }
 
 
-img {
+
+#darkModeToggle {
+    background-color: transparent;
+    border: 2px solid rgb(0, 0, 0);
+    color: rgb(0, 0, 0);
  
-  object-fit: cover;
+    padding: 0.5em;
+ font-size: 1em;
+  cursor: pointer;
+
+      margin-left: auto; /* Ensures it's aligned to the right */
 }
 
-img.projectImg {
-  border-radius: 0.25em;
+/* Hover state */
+#darkModeToggle:hover {
+    background-color: rgb(0, 0, 0);
+    color: white;
+}
+
+body.dark-mode #darkModeToggle {
+  background-color: transparent;
+    border: 2px solid rgb(255, 255, 255);
+    color: rgb(255, 255, 255);
+    font-size: 1em;
+
  
 }
 
-.about{
-float: right;
-padding-right: 2em;
-padding-top: 5em;
-font-size: 1.2em;
+body.dark-mode #darkModeToggle:hover {
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
 }
-
-.aboutImg1 {
-display: inline;
-margin-top: 100px;
-}
-
 
 a {
-  text-decoration: none;
-  background-color: rgb(255, 255, 255);
-
+    padding: 0;
+    text-decoration: none;
+    
 }
 
-a.item:hover {
-  color: #000;
-
+a.nav {
+    padding-left: 0.5em;
+    padding-right: 0.5em;
 }
 
-a.tag {
-  padding-top: -5px;
+a.handles {
+    padding-left: 0.2em;
+    padding-right: 0.2em;
 }
 
-
-a.topelements {
-  display: inline-block;
-  padding-right: 25px;
-}
-
-a.artistshow {
-  padding-left: 200px;
-
-}
-
-a:visited {
-  color: black;
-  background-color: white;
+a:active, a:hover, a:visited {
+    color: inherit;
+    background-color: white;
 }
 
 a:hover {
-  background-color: white;
-  text-decoration: #000 underline solid;
+    text-decoration: underline solid black;
 }
 
 a:active {
-  text-decoration: #000 underline solid;
-  background-color: white;
+    text-decoration: underline solid black;
+}
+
+a:visited {
+    color: black;
+}
+
+.img-grid-archive {
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 3em;
+    column-gap: 1em;
+    justify-content: center;
+    padding-top: 3em;
+}
+
+figcaption {
+    position: sticky;
+}
+
+figcaption.projectName {
+    font-size: 1.2em;
+        color: rgb(39, 36, 36); /* Default text color */
+}
+
+figcaption.tag {
+    font-size: 0.9em;
+    opacity: 60%;
+    padding-left: 0.2em;
+        color: rgb(39, 36, 36); /* Default text color */
 }
 
 
 
+img {
+    object-fit: cover;
+}
 
+img.projectImg {
+    border-radius: 0.25em;
+}
+
+.about {
+    float: right;
+    padding-right: 2em;
+    padding-top: 5em;
+    font-size: 1.2em;
+}
+
+.aboutImg1 {
+    display: inline;
+    margin-top: 100px;
+}
+
+a.item:hover {
+    color: #000;
+}
+
+a.tag {
+    padding-top: -5px;
+}
+
+a.topelements {
+    display: inline-block;
+    padding-right: 25px;
+}
+
+a.artistshow {
+    padding-left: 200px;
+}
+
+a:visited {
+    color: black;
+    background-color: white;
+}
+
+a:hover {
+    background-color: white;
+    text-decoration: #000 underline solid;
+}
+
+a:active {
+    text-decoration: #000 underline solid;
+    background-color: white;
+}
+
+/* Scrollbar hidden */
 .no-scrollbar {
-  scrollbar-width: none;
-  margin-bottom: 0;
-  padding-bottom: 0;
+    scrollbar-width: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
 }
 
 .no-scrollbar::-webkit-scrollbar {
-  display: none;
+    display: none;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .indexTitle {
+        font-size: 2em;
+    }
+
+    .links {
+        font-size: 1.5em;
+    }
+
+    .about {
+        float: none;
+        padding-right: 0;
+        padding-top: 1em;
+    }
+
+    .img-grid-archive {
+        column-gap: 2em;
+    }
+}
+
+/* Dark Mode Styling */
+body.dark-mode {
+    background-color: black;
+    color: white; /* All text should be white in dark mode */
+}
+
+body.dark-mode #header {
+    border-color: white; /* White border in dark mode */
+}
+
+body.dark-mode .socials {
+    border-top-color: white; /* White border in dark mode */
+}
+
+body.dark-mode .indexTitle,
+body.dark-mode .links,
+body.dark-mode .socials
+body.dark-mode .figcaption  {
+    color: white; /* White text color */
+}
+
+body.dark-mode .img-grid-archive {
+    background-color: #000000;
+}
+
+body.dark-mode a.nav,
+body.dark-mode a.handles,
+body.dark-mode a.item {
+    color: white; /* White text for links */
+}
+
+body.dark-mode a:hover,
+body.dark-mode a:active,
+body.dark-mode a:visited {
+    color: white;
+    background-color: transparent;
+    text-decoration: underline solid white;
+}
+
+body.dark-mode .dark-mode-toggle {
+    border-color: white; /* White border for dark mode toggle */
+    color: white; /* White text for dark mode toggle */
+}
+
+body.dark-mode .dark-mode-toggle:hover {
+    background-color: white;
+    color: black;
+}
+
+body.dark-mode .socials svg {
+    fill: white; /* Ensure social icons are white */
+}
+
+body.dark-mode figcaption.projectName,
+body.dark-mode figcaption.tag {
+    color: white; /* White text color in dark mode */
+}
+
+/* Footer adjustment */
+footer {
+    position: relative;
+    bottom: 0;
+    margin-top: 2em;
+
 }
 
 
-
-
-
-
-/* make footer relative to each page, e.g not on home page as scroll is not enough on y axis
-footer {
-  position:bottom;
-} */
