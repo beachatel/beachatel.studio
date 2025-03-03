@@ -218,13 +218,13 @@ body.dark-mode a,
 body.dark-mode a.nav,
 body.dark-mode a.handles,
 body.dark-mode a.item {
-    color: white; /* White text for links */
+    color: white !important; /* White text for links */
 }
 
 body.dark-mode a:hover,
 body.dark-mode a:active,
 body.dark-mode a:visited {
-    color: white;
+    color: white !important;
     background-color: transparent;
     text-decoration: underline solid white;
 }
