@@ -89,9 +89,9 @@ a.handles {
     padding-right: 0.2em;
 }
 
-a:active, a:hover, a:visited {
-    color: inherit;
-    background-color: white;
+a:active, a:visited {
+    color: rgb(39, 36, 36);
+ 
 }
 
 a:hover {
@@ -154,37 +154,8 @@ img.projectImg {
     margin-top: 100px;
 }
 
-a.item:hover {
-    color: #000;
-}
 
-a.tag {
-    padding-top: -5px;
-}
 
-a.topelements {
-    display: inline-block;
-    padding-right: 25px;
-}
-
-a.artistshow {
-    padding-left: 200px;
-}
-
-a:visited {
-    color: black;
-    background-color: white;
-}
-
-a:hover {
-    background-color: white;
-    text-decoration: #000 underline solid;
-}
-
-a:active {
-    text-decoration: #000 underline solid;
-    background-color: white;
-}
 
 /* Scrollbar hidden */
 .no-scrollbar {
