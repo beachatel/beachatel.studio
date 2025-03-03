@@ -76,7 +76,7 @@ body.dark-mode #darkModeToggle:hover {
 a {
     padding: 0;
     text-decoration: none;
-    
+    color: rgb(39, 36, 36);
 }
 
 a.nav {
@@ -103,7 +103,8 @@ a:active {
 }
 
 a:visited {
-    color: black;
+    color: rgb(39, 36, 36) !important; /* Ensures it applies */
+    background-color: white;
 }
 
 .img-grid-archive {
@@ -242,6 +243,7 @@ body.dark-mode .img-grid-archive {
     background-color: #000000;
 }
 
+body.dark-mode a,
 body.dark-mode a.nav,
 body.dark-mode a.handles,
 body.dark-mode a.item {
