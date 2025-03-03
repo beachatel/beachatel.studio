@@ -1,0 +1,4 @@
+title: Beachatel Studio
+description: A minimalist portfolio site
+baseurl: "" # Leave empty if using a custom domain
+permalink: pretty # Removes .html from URLs
