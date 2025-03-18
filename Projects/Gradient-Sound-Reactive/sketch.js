@@ -37,7 +37,7 @@ function setup() {
   fft = new p5.FFT();
   amplitude = new p5.Amplitude();
 
-
+  sound.play();
   sound.loop();
 
 
