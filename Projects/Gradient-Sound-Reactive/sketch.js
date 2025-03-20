@@ -1,9 +1,9 @@
 
 
-let sound;
+// let sound;
 let fft;
 let amplitude;
-let audioIn;
+let mic;
 
 
 let s1;       
@@ -27,26 +27,21 @@ let r;
 
 let t = 0;
 
-function preload() {
+// function preload() {
 
-  sound = loadSound("Data/chord.mp3");
-}
+//   // sound = loadSound("Data/enlite.mp3");
+// }
   
   function setup() {
   createCanvas(windowWidth, windowHeight);
 
-//  audioIn = new p5.AudioIn();
-
-//   // start the Audio Input.
-//   // By default, it does not .connect() (to the computer speakers)
-//   audioIn.start();
-  
-
+   mic = new p5.AudioIn();
+  mic.start(); // picks up your Mac’s selected input
   fft = new p5.FFT();
+  fft.setInput(mic);
   amplitude = new p5.Amplitude();
-
-
-  sound.loop();
+  amplitude.setInput(mic);
+  // sound.loop();
 
 
   r = random(1);
@@ -75,7 +70,7 @@ let palette = [
 
 
   let spectrum = fft.analyze();
-  let bassEnergy   = fft.getEnergy("bass","30");   // 20–140 Hz
+  let bassEnergy   = fft.getEnergy("bass","100");   // 20–140 Hz
   let midEnergy    = fft.getEnergy("mid");    // 400–2,600 Hz
   let snare = fft.getEnergy("treble","4000"); // snare
   let level = amplitude.getLevel();    // overall amplitude (0..1-ish)
@@ -85,35 +80,36 @@ let palette = [
   gridSize = map(bassEnergy,    0, 255, 5, 20);
   s2       = map(snare, 0, 255,  1,   5);
   mids = map(midEnergy,0,255,10,100);
+  snare = map(snare,0,255,1,50);
+  soundFrameRate = map(level,0,1,10,40)
 
-  soundFrameRate = map(level,0,1,10,80)
-
-console.log(soundFrameRate);
+// console.log(soundFrameRate);
 
   doTan         = (bassEnergy > 50);
-  doSin         = (midEnergy > 15);
-  doTanEllipse  = (level > 0.3);
-  doSinEllipse  = (level > 0.2);
-  doCheck1      = (snare > 1);
-  doCheck2      = (mids > 50);
-
+  doSin         = (mids > 15);
+  doTanEllipse  = (level > 0.1);
+  doSinEllipse  = (level < 0.1);
+  doCheck1      = (snare > 5);
+  doCheck2      = (snare < 1.2);
+   doCheck3     = (bassEnergy > 5);
+console.log(snare);
   //   dgs = gridSize * s2;
 
   // dgs = gridSize;
 
- if (level < 0.5){
-  dgsX = 50;
+ if (level < 0.1){
+  dgsX = 70;
  } else if (level > 0.5){
  dgsX = gridSize * s2;
   }
 
-  if (level > 0.5){
- dgsY = 50
-  } else if (level < 0.5){
+  if (level > 0.1){
+ dgsY = 30
+  } else if (level < 0.1){
     dgsY = gridSize * s2;
   }
 
-   if (level > 0.7){
+   if (level > 0.1){
   dw = width/level;
  } else if (level < 0.5){
  dw= width;
@@ -146,7 +142,7 @@ dh = height;
 
 
   let fromIndex = floor(noise(baseNoise) * palette.length);
-  let toIndex   = floor(noise(baseNoise + 100) * palette.length);
+  let toIndex   = floor(noise(baseNoise + 1000) * palette.length);
   let fromColor = color(palette[fromIndex]);
   let toColor   = color(palette[toIndex]);
 
@@ -174,8 +170,8 @@ dh = height;
    
       translate(x / s1, y / s1);
    
-      stroke(interD);
-      strokeWeight(r1 * gridSize / 2);
+      stroke(interC);
+      strokeWeight(r1 * gridSize / 4);
       fill(interD);
 
       let r3 = bassEnergy / 200; 
@@ -201,7 +197,7 @@ dh = height;
 
       // Animate circles if triggered
       if (doTanEllipse) {
-        let e1 = 1 - (level * 5.0);
+        let e1 = 1 - (level * 2.0);
         ellipse(x, y, gridSize * tan(1) * e1, gridSize * tan(1) * e1);
       }
       if (doSinEllipse) {
@@ -220,12 +216,12 @@ dh = height;
       
       } else if (doCheck2) {
         
- ellipse(x / sin(2), y * sin(2), gridSize * midEnergy, gridSize * midEnergy);
+ ellipse(x / sin(2), y * sin(2), gridSize * midEnergy / 50, gridSize * midEnergy / 50);
         
        
 
       } else if (doCheck3) {
-        ellipse(x / sin(2), y * sin(2), gridSize, gridSize);
+        ellipse(x / sin(2), y * sin(2), gridSize / 50, gridSize / 50);
       } else if (doCheck4) {
         ellipse(x / sin(2), y * sin(2), gridSize, gridSize);
       }
