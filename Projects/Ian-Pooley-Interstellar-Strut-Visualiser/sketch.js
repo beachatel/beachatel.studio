@@ -46,6 +46,8 @@ let t = 0;
 
 
   r = random(1);
+    // Request screen wake lock to prevent sleep
+  requestWakeLock();
 }
 
 function draw() {
@@ -95,7 +97,7 @@ let level = amplitude.getLevel(); //* 50;  // multiply for a stronger effect    
   doCheck1      = (snare > 5);
   doCheck2      = (snare < 1.2);
    doCheck3     = (bassEnergy > 5);
-console.log(snare);
+// console.log(snare);
   //   dgs = gridSize * s2;
 
   // dgs = gridSize;
@@ -235,10 +237,3 @@ dh = height;
 }
 
 
-function mousePressed() {
-  if (sound.isPlaying()) {
-    sound.pause();
-  } else {
-    sound.play();
-  }
-}
