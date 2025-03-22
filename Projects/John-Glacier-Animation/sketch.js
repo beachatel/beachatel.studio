@@ -2,7 +2,7 @@ let img;
 let time = 0;
 
 function preload() {
-  img = loadImage('data/likearibbon.png');
+  img = loadImage('https://res.cloudinary.com/din8rv70n/image/upload/v1742652194/likearibbon_pmnpre.png');
 }
 
 function setup() {
