@@ -12,8 +12,8 @@ function preload() {
   img = loadImage("https://res.cloudinary.com/din8rv70n/image/upload/v1742739000/logo_taiqah.jpg");
   song = loadSound("src/BlackRussian.mp3");
 
-  Balance = loadFont('/Fonts/Balance.ttf');
-  ZuumeBlackItalic = loadFont('/Fonts/ZuumeBlackItalic.ttf');
+  Balance = loadFont("https://res.cloudinary.com/din8rv70n/raw/upload/v1742739911/Balance_v1dvsz.ttf");
+  ZuumeBlackItalic = loadFont("https://res.cloudinary.com/din8rv70n/raw/upload/v1742740180/ZuumeBlackItalic_rev2yj.ttf");
 }
 
 function setup() {
