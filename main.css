@@ -108,13 +108,19 @@ a:visited {
 }
 
 .img-grid-archive {
-    display: flex;
-    flex-wrap: wrap;
-    row-gap: 3em;
-    column-gap: 1em;
-    justify-content: center;
-    padding-top: 3em;
+    /* display: flex; */
+      display: grid;
+    /* flex-wrap: wrap; */
+    /* row-gap: 3em; */
+    column-gap: 0.5em;
+  
+    padding-top: 1em;
+     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    align-content:start; /* Push grid items up if there is space */
 }
+
+
+
 
 figcaption {
     position: sticky;
@@ -123,6 +129,7 @@ figcaption {
 figcaption.projectName {
     font-size: 1.2em;
         color: rgb(39, 36, 36); /* Default text color */
+        padding-top: 0.5em;
 }
 
 figcaption.tag {
@@ -135,12 +142,18 @@ figcaption.tag {
 
 
 img {
-    object-fit: cover;
+    object-fit:cover;
 }
 
 img.projectImg {
     border-radius: 0.25em;
+ 
+  width: 100%;
+  height: auto;
+
 }
+
+
 
 .about {
     float: right;
@@ -255,5 +268,21 @@ footer {
     margin-top: 2em;
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
