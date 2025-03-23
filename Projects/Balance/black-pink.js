@@ -9,7 +9,7 @@ let cellSize = 90; // Size of each grid cell
 let reversing = false; // Tracks the direction of the grid filling
 
 function preload() {
-  img = loadImage("img/logo.jpg");
+  img = loadImage("https://res.cloudinary.com/din8rv70n/image/upload/v1742739000/logo_taiqah.jpg");
   song = loadSound("src/BlackRussian.mp3");
 
   Balance = loadFont('/Fonts/Balance.ttf');
