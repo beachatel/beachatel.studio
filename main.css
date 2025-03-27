@@ -53,6 +53,54 @@
     color: white;
 }
 
+/* Dark Mode Styles */
+body.dark-mode {
+    background-color: black;
+    color: white;
+}
+
+body.dark-mode #header {
+    border-color: white;
+}
+
+body.dark-mode .indexTitle,
+body.dark-mode .links,
+body.dark-mode .socials,
+body.dark-mode figcaption.projectName,
+body.dark-mode figcaption.tag {
+    color: white;
+}
+
+body.dark-mode .socials {
+    border-top-color: white;
+}
+
+body.dark-mode .socials svg {
+    fill: white;
+    color: white;
+}
+
+body.dark-mode #darkModeToggle {
+    border: 2px solid white;
+    color: white;
+}
+
+body.dark-mode #darkModeToggle:hover {
+    background-color: white;
+    color: black;
+}
+
+body.dark-mode a {
+    color: white !important;
+}
+
+body.dark-mode a:hover,
+body.dark-mode a:active,
+body.dark-mode a:visited {
+    color: white !important;
+    text-decoration: underline solid white;
+}
+
 /* Masonry Grid Layout */
 .img-grid-archive {
     column-count: 3;
@@ -73,6 +121,7 @@ img.projectImg {
     display: block;
     border-radius: 0.25em;
     object-fit: cover;
+    padding-top: 1em;
 }
 
 figcaption {
