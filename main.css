@@ -1,20 +1,19 @@
 /* General Styles */
 * {
     font-family: "wanpaku-rera", sans-serif;
-
     box-sizing: border-box;
     overflow-x: hidden;
 }
 
 #header {
-    border: solid 0.1em rgb(39, 36, 36); /* Default border color */
+    border: solid 0.1em rgb(39, 36, 36);
 }
 
 .indexTitle {
     display: inline-flex;
     font-size: 3em;
     height: 1.5em;
-        color: rgb(39, 36, 36); /* Default text color */
+    color: rgb(39, 36, 36);
 }
 
 .links {
@@ -23,7 +22,7 @@
     float: right;
     padding: 0;
     padding-top: 0.2em;
-    color: rgb(39, 36, 36); /* Default text color */
+    color: rgb(39, 36, 36);
 }
 
 .socials {
@@ -36,43 +35,66 @@
 }
 
 .socials svg {
-    margin-right: 1em; /* Space out the social icons */
+    margin-right: 1em;
 }
-
-
 
 #darkModeToggle {
     background-color: transparent;
     border: 2px solid rgb(0, 0, 0);
     color: rgb(0, 0, 0);
- 
     padding: 0.5em;
- font-size: 1em;
-  cursor: pointer;
-
-      margin-left: auto; /* Ensures it's aligned to the right */
+    font-size: 1em;
+    cursor: pointer;
+    margin-left: auto;
 }
 
-/* Hover state */
 #darkModeToggle:hover {
     background-color: rgb(0, 0, 0);
     color: white;
 }
 
-body.dark-mode #darkModeToggle {
-  background-color: transparent;
-    border: 2px solid rgb(255, 255, 255);
-    color: rgb(255, 255, 255);
-    font-size: 1em;
-
- 
+/* Masonry Grid Layout */
+.img-grid-archive {
+    column-count: 3;
+    column-gap: 1em;
+    padding-top: 1em;
 }
 
-body.dark-mode #darkModeToggle:hover {
-  background-color: rgb(255, 255, 255);
-  color: rgb(0, 0, 0);
+.img-grid-archive figure {
+    display: inline-block;
+    width: 100%;
+    margin: 0 0 1em;
+    break-inside: avoid;
 }
 
+img.projectImg {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 0.25em;
+    object-fit: cover;
+}
+
+figcaption {
+    position: relative;
+    margin: 0;
+    padding: 0.3em 0;
+}
+
+figcaption.projectName {
+    font-size: 1.2em;
+    color: rgb(39, 36, 36);
+    padding-top: 0.5em;
+}
+
+figcaption.tag {
+    font-size: 0.9em;
+    opacity: 60%;
+    padding-left: 0.2em;
+    color: rgb(39, 36, 36);
+}
+
+/* Anchor Styling */
 a {
     padding: 0;
     text-decoration: none;
@@ -91,7 +113,6 @@ a.handles {
 
 a:active, a:visited {
     color: rgb(39, 36, 36);
- 
 }
 
 a:hover {
@@ -103,186 +124,19 @@ a:active {
 }
 
 a:visited {
-    color: rgb(39, 36, 36) !important; /* Ensures it applies */
+    color: rgb(39, 36, 36) !important;
     background-color: white;
 }
 
-.img-grid-archive {
-    /* display: flex; */
-      display: grid;
-    /* flex-wrap: wrap; */
-    /* row-gap: 3em; */
-    column-gap: 0.5em;
-  
-    padding-top: 1em;
-     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    align-content:start; /* Push grid items up if there is space */
-}
-
-
-
-
-figcaption {
-    position: sticky;
-}
-
-figcaption.projectName {
-    font-size: 1.2em;
-        color: rgb(39, 36, 36); /* Default text color */
-        padding-top: 0.5em;
-}
-
-figcaption.tag {
-    font-size: 0.9em;
-    opacity: 60%;
-    padding-left: 0.2em;
-        color: rgb(39, 36, 36); /* Default text color */
-}
-
-
-
-img {
-    object-fit:cover;
-}
-
-img.projectImg {
-    border-radius: 0.25em;
- 
-  width: 100%;
-  height: auto;
-
-}
-
-
-
-.about {
-    float: right;
-    padding-right: 2em;
-    padding-top: 5em;
-    font-size: 1.2em;
-}
-
-.aboutImg1 {
-    display: inline;
-    margin-top: 100px;
-}
-
-
-
-
-/* Scrollbar hidden */
-.no-scrollbar {
-    scrollbar-width: none;
-    margin-bottom: 0;
-    padding-bottom: 0;
-}
-
-.no-scrollbar::-webkit-scrollbar {
-    display: none;
-}
-
-/* Media Queries for Responsiveness */
-@media (max-width: 768px) {
-    .indexTitle {
-        font-size: 2em;
-    }
-
-    .links {
-        font-size: 1.5em;
-    }
-
-    .about {
-        float: none;
-        padding-right: 0;
-        padding-top: 1em;
-    }
-
+/* Responsive adjustments */
+@media (max-width: 1024px) {
     .img-grid-archive {
-        column-gap: 2em;
+        column-count: 2;
     }
 }
 
-/* Dark Mode Styling */
-body.dark-mode {
-    background-color: black;
-    color: white; /* All text should be white in dark mode */
+@media (max-width: 600px) {
+    .img-grid-archive {
+        column-count: 1;
+    }
 }
-
-body.dark-mode #header {
-    border-color: white; /* White border in dark mode */
-}
-
-body.dark-mode .socials {
-    border-top-color: white; /* White border in dark mode */
-}
-
-body.dark-mode .indexTitle,
-body.dark-mode .links,
-body.dark-mode .socials
-body.dark-mode .figcaption  {
-    color: white; /* White text color */
-}
-
-body.dark-mode .img-grid-archive {
-    background-color: #000000;
-}
-
-body.dark-mode a,
-body.dark-mode a.nav,
-body.dark-mode a.handles,
-body.dark-mode a.item {
-    color: white !important; /* White text for links */
-}
-
-body.dark-mode a:hover,
-body.dark-mode a:active,
-body.dark-mode a:visited {
-    color: white !important;
-    background-color: transparent;
-    text-decoration: underline solid white;
-}
-
-body.dark-mode .dark-mode-toggle {
-    border-color: white; /* White border for dark mode toggle */
-    color: white; /* White text for dark mode toggle */
-}
-
-body.dark-mode .dark-mode-toggle:hover {
-    background-color: white;
-    color: black;
-}
-
-body.dark-mode .socials svg {
-    fill: white; /* Ensure social icons are white */
-}
-
-body.dark-mode figcaption.projectName,
-body.dark-mode figcaption.tag {
-    color: white; /* White text color in dark mode */
-}
-
-/* Footer adjustment */
-footer {
-    position: relative;
-    bottom: 0;
-    margin-top: 2em;
-
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
