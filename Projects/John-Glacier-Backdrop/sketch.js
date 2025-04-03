@@ -12,12 +12,12 @@ let sampleFactor;
 let colorShift;
 
 function preload() {
-  green = loadImage("Assets/green.png");
-  purpleFlower = loadImage("Assets/purple flower.png");
-  redFlower = loadImage("Assets/red flower.png");
-  butterfly = loadImage("Assets/butterfly.png");
+  green = loadImage("https://res.cloudinary.com/din8rv70n/image/upload/v1743678123/green_j4iti0.png");
+  purpleFlower = loadImage("https://res.cloudinary.com/din8rv70n/image/upload/v1743678122/purple_flower_yhbem7.png");
+  redFlower = loadImage("https://res.cloudinary.com/din8rv70n/image/upload/v1743678124/red_flower_xl2h6r.png");
+  butterfly = loadImage("https://res.cloudinary.com/din8rv70n/image/upload/v1743678118/butterfly_yr5u6w.png");
 
-  font = loadFont("Assets/camera.ttf"); // Replace with your font file
+  font = loadFont("https://res.cloudinary.com/din8rv70n/raw/upload/v1743678117/camera_ett6ql.ttf"); // Replace with your font file
 }
 
 function setup() {
