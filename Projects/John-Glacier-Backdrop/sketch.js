@@ -21,10 +21,10 @@ function preload() {
 }
 
 function setup() {
-  createCanvas(windowWidth, windowHeight);
+  createCanvas(1920, 1200);
   imageMode(CENTER);
 
-  points = font.textToPoints("JOHN GLACIER", 35, height / 2, 180, {
+  points = font.textToPoints("JOHN GLACIER", 35, height / 2, 240, {
     sampleFactor: sampleFactor, // Keep density the same
     simplifyThreshold: 0,
   });
