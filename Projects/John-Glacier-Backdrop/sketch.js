@@ -21,13 +21,20 @@ function preload() {
 }
 
 function setup() {
-  createCanvas(1920, 1200);
-  imageMode(CENTER);
+  createCanvas(1536, 896);
+  imageMode(CORNER);
 
-  points = font.textToPoints("JOHN GLACIER", 35, height / 2, 240, {
+  points = font.textToPoints("JOHN", width / 2 - 380, height / 2 - 50, 250, {
     sampleFactor: sampleFactor, // Keep density the same
     simplifyThreshold: 0,
   });
+
+  let additionalPoints = font.textToPoints("GLACIER", 170, height / 2 + 180, 250, {
+    sampleFactor: 0.07,
+    simplifyThreshold: 0,
+  });
+
+  points = points.concat(additionalPoints);
 
   mic = new p5.AudioIn();
   mic.start();
@@ -49,13 +56,9 @@ function draw() {
   trebleAmp = lerp(trebleAmp, treble * 0.01, 0.1); // Separate treble tracking  
   
 
-  if (choice === 0) {
+
     nameAnimation(smoothAmp, bassAmp, trebleAmp);
-      
-  } else if (choice === 1) {
-    // flowerSwipe(smoothAmp);
-      flowerSwipe(smoothAmp);
-  }
+  
 }
 
 function nameAnimation(bass, treble, mid) {
@@ -111,28 +114,4 @@ function nameAnimation(bass, treble, mid) {
 }
 
 
-function flowerSwipe() {
-  // background(0,10);
-   background("#f3d333");
-  push();
-    imageMode(CORNER);
-for (let x = 0; x < width; x += gridSize){
-  for (let y = 0; y < height; y += gridSize){
-    let images = [green, purpleFlower, redFlower, butterfly];
-    let img1 = images[(x / gridSize + y / gridSize) % images.length];
-    image(img1, x, y, 100, 100);
 
-    
-  }
-}
-
-  pop();
-}
-
-function keyPressed() {
-  if (key === "1") {
-    choice = 0;
-  } else if (key === "2") {
-    choice = 1;
-  }
-}
