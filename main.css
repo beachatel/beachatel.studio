@@ -189,3 +189,21 @@ a:visited {
         column-count: 1;
     }
 }
+
+#info{
+    padding: 10vh;
+    font-size: 1.5vw;
+    border-bottom: solid 0.1em rgb(39, 36, 36);
+}
+
+#about {
+    float: left;
+    width: 48%;
+    margin-right: 2%;
+}
+
+#bio {
+    float: right;
+    width: 48%;
+}
+

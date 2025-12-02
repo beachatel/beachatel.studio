@@ -16,7 +16,7 @@ function preload(){
   aFont = loadFont("Fonts/ABCFavoritArabic-Bold-Trial copy.otf");
 }
 function setup() {
-  createCanvas(windowWidth , windowHeight);
+  createCanvas(windowWidth/2, windowHeight);
 
   // bgPicker = createColorPicker("white");
   // bgPicker.position(10,10);
