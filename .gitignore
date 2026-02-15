@@ -3,8 +3,11 @@
 *.png
 
 *.jpg
-
+*jpeg
 *.JPG
-
+*mp3
 *.mp4
 
+*.vscode
+
+/All_Projects/
